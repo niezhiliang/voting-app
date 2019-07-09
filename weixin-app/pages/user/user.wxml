@@ -1,0 +1,28 @@
+<view class='container'>
+
+  <view class='section'>
+    <view>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+    <view>
+      <image bindtap="addVote" class="add-avatar" src="../../imgs/new.png" mode="cover"></image>
+    </view>
+  </view>
+
+  <view wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="">
+    <view class="weui-panel" bindtap='hello'>
+      <view class="weui-panel__bd">
+          <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">投票{{item}}</view>
+                <view class="weui-media-box__desc">这里是投票的描述</view>
+                <view class="weui-media-box__info">
+                    <view class="weui-media-box__info__meta">时间：2019-07-08 20:00</view>
+                    <view class="weui-media-box__info__meta">2019-07-10 00:00</view>
+                    <view class="weui-media-box__info__meta">苏雨丶</view>
+                </view>
+          </view>
+        </view>
+    </view>
+  </view>
+</view>

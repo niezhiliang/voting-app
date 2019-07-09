@@ -1,0 +1,23 @@
+/* pages/add/add.wxss */
+
+.remove-avatar {
+  width: 30rpx;
+  height: 30rpx;
+  float: left
+}
+
+.add-avatar {
+  width: 43rpx;
+  height: 43rpx;
+  margin-left: -5rpx;
+  float: left
+}
+
+.selecteds {
+  margin-left: 10rpx;
+}
+
+.date {
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+}

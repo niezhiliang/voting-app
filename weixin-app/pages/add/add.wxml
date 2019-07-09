@@ -1,0 +1,77 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="投票标题" bindinput="titleInput"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="补充描述" bindinput="descriptInput"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_switch" >
+                <view class="weui-cell__bd">是否多选</view>
+                <view class="weui-cell__ft">
+                    <switch checked="{{ many_selected }}" bindtap='changeSwitch'/>
+                </view>
+            </view>
+
+            <view wx:if="{{ many_selected }}" class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">多选数量</view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput='countInput'/>
+                </view>
+            </view>
+
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">开始时间</view>
+                </view>
+                <view class="weui-cell__bd date">
+                    <picker mode="multiSelector" value="{{beginAt}}" bindchange="changeBeginAt"                   bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+                      <view class="tui-picker-detail">
+                  {{dateTimeArray[0][beginAt[0]]}}-{{dateTimeArray[1][beginAt[1]]}}-{{dateTimeArray[2][beginAt[2]]}} {{dateTimeArray[3][beginAt[3]]}}:{{dateTimeArray[4][beginAt[4]]}}
+                      </view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">截止时间</view>
+                </view>
+                <view class="weui-cell__bd date">
+                    <picker mode="multiSelector" value="{{endAt}}" bindchange="changeEndAt"                   bindcolumnchange="changeEndTimeColumn" range="{{dateTimeArray}}">
+                      <view class="tui-picker-detail">
+                  {{dateTimeArray[0][endAt[0]]}}-{{dateTimeArray[1][endAt[1]]}}-{{dateTimeArray[2][endAt[2]]}} {{dateTimeArray[3][endAt[3]]}}:{{dateTimeArray[4][endAt[4]]}}
+                      </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+      <view class="weui-cells__title">添加选项</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input" wx:for='{{array}}' wx:key=''>
+                <view class="weui-cell__hd">
+                   <image class="remove-avatar" src="../../imgs/remove.png" bindtap='delInput' data-idx='{{index}}'></image>
+                </view>
+                <view class="weui-cell__bd selecteds">
+                    <input class="weui-input" placeholder="选项" data-idx='{{index}}' bindinput='addMembers'/>
+                </view>
+          </view>
+
+          <view class="weui-cell weui-cell_link" bindtap='addInput'>
+            <image class="add-avatar" src="../../imgs/add_selected.png"></image>
+            <view class="weui-cell__bd">添加更多</view>
+          </view>
+      </view>
+
+      <view class="weui-btn-area">
+          <button class="weui-btn" type="primary" bindtap="addVote">确定</button>
+      </view>
+</view>

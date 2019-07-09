@@ -1,0 +1,26 @@
+<view>
+    <view class="page__hd">
+        <view class="page__title">投票1[单选]</view>
+        <view class="page__desc descript">这里是投票描述</view>
+
+        <view wx:for="{{[1,2,3,4,5,6]}}" data-index="{{item}}" class='member' bindtap='queryMember' wx:key="">
+
+            <view>
+              <text>苏苏丶</text>
+              <image wx-if="{{item == selected}}" class='selected' src="../../imgs/selected.png" mode="cover"></image>
+            </view>
+
+            <view class='count'> 
+              <view>
+                <text>20票</text>
+                <text class='bfb'>60.0%</text>
+              </view>
+            </view>
+
+            <view wx:if="{{ item == memebered }}">
+              <image wx:for="{{[1,2,3,4,5]}}" class="userinfo-avatar" src="https://avatars2.githubusercontent.com/u/33079130?s=460&v=4" mode="cover"></image>
+            </view>
+        </view>
+        <view class="page__desc">投票截止：2019-08-20 20:00</view>
+    </view>
+</view>

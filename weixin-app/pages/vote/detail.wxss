@@ -1,0 +1,34 @@
+/* pages/vote/detail.wxss */
+
+.descript {
+  margin-bottom: 20px;
+}
+.member{
+  background-color: white;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 14px;
+  
+}
+
+.count {
+  font-size: 12px;
+  margin-top: 5PX;
+}
+
+.bfb{
+  margin-left: 10px;
+  float: right;
+}
+
+.userinfo-avatar {
+  width: 52rpx;
+  height: 52rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+}
+.selected {
+  width: 48rpx;
+  height: 48rpx;
+  float: right;
+}

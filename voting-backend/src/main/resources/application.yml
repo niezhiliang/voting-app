@@ -1,0 +1,30 @@
+server:
+  port: 8088
+#  custom:
+#    httpPort: 3839
+#  ssl:
+#    key-store: classpath:ssl.jks
+#    key-password: 123456
+#    key-store-type: JKS
+#    key-alias: huluwa
+
+spring:
+  datasource:
+    name: voting_app
+    url: jdbc:mysql://www.niezhiliang.com/voting_app?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: adminadmin
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: www.niezhiliang.com
+    port: 6379
+    password: adminadmin
+    timeout: 5000
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
